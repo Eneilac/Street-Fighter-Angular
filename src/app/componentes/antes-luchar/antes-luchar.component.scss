@@ -1,0 +1,36 @@
+.bodyBox
+{
+  border: 0;
+  display: grid;
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  overflow:auto;
+  cursor: crosshair;
+  align-content: end;
+  padding-bottom: 6vw;
+}
+
+.container
+{
+  height: 100vh;
+}
+
+img
+{
+  width: auto;
+  height: 25vw;
+}
+
+.vs
+{
+  width: 10vw;
+  height: auto;
+  margin-bottom: 10vw;
+}
+
+.oponent
+{
+  transform: scaleX(-1);
+}

@@ -1,0 +1,33 @@
+
+<div style="text-align:center">
+  <nav class="navbar navbar-expand navbar-light mb-4">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <img src="../assets/nav/bienvenida.png"  (click)="selectRouteAudio('/bienvenida')" class="navImg" [routerLink]="['/bienvenida']" [routerLinkActive]="['navImgActive']">
+      </li>
+      <li class="nav-item">
+        <img src="../assets/nav/seleccion.png"  (click)="selectRouteAudio('/seleccion')" class="navImg" [routerLink]="['/seleccion']" [routerLinkActive]="['navImgActive']">
+      </li>
+
+      <li class="nav-item" *ngIf="admin">
+        <img src="../assets/nav/modificarLuchador.png"  (click)="selectRouteAudio('/modificar-luchador')" class="navImg" [routerLink]="['/modificar-luchador']" [routerLinkActive]="['navImgActive']">
+      </li>
+
+      <li class="nav-item" *ngIf="admin">
+        <img src="../assets/nav/anadir.png" (click)="selectRouteAudio('/anadir-luchador')" class="navImg" [routerLink]="['/anadir-luchador']" [routerLinkActive]="['navImgActive']">
+      </li>
+
+      <li class="nav-item">
+        <img src="../assets/nav/comentarios.png" (click)="selectRouteAudio('/comentarios')" class="navImg" [routerLink]="['/comentarios']" [routerLinkActive]="['navImgActive']">
+      </li>
+      <li class="botones">
+        <button class="btn btn-warning" [ngClass]="noUsuario() ? 'd-block':'d-none'" [routerLink]="['/registro']">Registro</button><button [ngClass]="noUsuario() ? 'd-block':'d-none'" class="btn btn-warning" [routerLink]="['/login']">Login</button><button class="btn btn-success" [ngClass]="noUsuario() ? 'd-none':'d-block'" (click)="logoutUsuario()">Logout</button>
+      </li>
+    </ul>
+    <div class="loader">
+      <div class="lds-dual-ring"></div>
+    </div>
+  </nav>
+  <router-outlet></router-outlet>
+</div>
+

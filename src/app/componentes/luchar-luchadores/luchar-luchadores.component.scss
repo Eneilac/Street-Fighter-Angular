@@ -1,0 +1,276 @@
+.bodyBox
+{
+  border: 0;
+  display: grid;
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  overflow:auto;
+  cursor: crosshair;
+  align-content: end;
+  padding-bottom: 2vw;
+}
+
+.container
+{
+  height: 100vh;
+}
+
+img
+{
+  width: auto;
+  height: 25vw;
+}
+
+.vs
+{
+  width: 10vw;
+  height: auto;
+  margin-bottom: 6vw;
+}
+
+.oponent
+{
+  transform: scaleX(-1);
+}
+
+
+/* Ataques */
+
+.attackRow
+{
+  height: 10vw;
+  box-sizing: border-box;
+  //border: 2px solid red;
+}
+
+.attackBox
+{
+  border: 2px solid white;
+  height: 5vw;
+  color: white;
+}
+
+span
+{
+  font-size: 0.9vw;
+}
+
+.attack
+{
+  transition: 400ms;
+  background-color: indianred;
+  opacity: 0.8;
+  filter: grayscale(20%);
+}
+
+.regenerate
+{
+  transition: 400ms;
+  background-color: mediumseagreen;
+  opacity: 0.8;
+  filter: grayscale(20%);
+}
+
+.attackRandom
+{
+  transition: 400ms;
+  opacity: 0.8;
+  filter: grayscale(20%);
+  background: linear-gradient(270deg, #ff321c, #ff5100, #ff00f5);
+  background-size: 600% 600%;
+
+  -webkit-animation: attackRandomAnimation 10s ease infinite;
+  -moz-animation: attackRandomAnimation 10s ease infinite;
+  animation: attackRandomAnimation 10s ease infinite;
+}
+
+@-webkit-keyframes attackRandomAnimation {
+  0%{background-position:0% 75%}
+  50%{background-position:100% 26%}
+  100%{background-position:0% 75%}
+}
+@-moz-keyframes attackRandomAnimation {
+  0%{background-position:0% 75%}
+  50%{background-position:100% 26%}
+  100%{background-position:0% 75%}
+}
+@keyframes attackRandomAnimation {
+  0%{background-position:0% 75%}
+  50%{background-position:100% 26%}
+  100%{background-position:0% 75%}
+}
+
+.regenerateRandom
+{
+  transition: 400ms;
+  opacity: 0.8;
+  filter: grayscale(20%);
+  background: linear-gradient(270deg, #b4ff1c, #64d244, #63f3ae);
+  background-size: 600% 600%;
+
+  -webkit-animation: attackRandomAnimation 10s ease infinite;
+  -moz-animation: attackRandomAnimation 10s ease infinite;
+  animation: attackRandomAnimation 10s ease infinite;
+}
+
+@-webkit-keyframes attackRandomAnimation {
+  0%{background-position:0% 75%}
+  50%{background-position:100% 26%}
+  100%{background-position:0% 75%}
+}
+@-moz-keyframes attackRandomAnimation {
+  0%{background-position:0% 75%}
+  50%{background-position:100% 26%}
+  100%{background-position:0% 75%}
+}
+@keyframes attackRandomAnimation {
+  0%{background-position:0% 75%}
+  50%{background-position:100% 26%}
+  100%{background-position:0% 75%}
+}
+
+.attackRandom:hover, .attack:hover, .regenerateRandom:hover, .regenerate:hover
+{
+  transition: 100ms;
+  opacity: 1;
+  z-index: 200;
+  filter: grayscale(0%);
+}
+
+/* Bars */
+
+.healthBar
+{
+  padding: 0;
+  height: 1.5vw;
+  border: 2px solid #171717;
+  background: rgb(255,0,0);
+  background: linear-gradient(90deg, rgba(255,0,0,1) 0%, rgba(255,149,0,1) 32%, rgba(254,255,0,1) 63%, rgba(104,255,0,1) 100%);
+  margin-bottom: 1vw;
+}
+
+.healthBar.contrincantBar
+{
+  background: rgb(255,0,0);
+  background: linear-gradient(90deg, rgba(104,255,0,1) 0%, rgba(254,255,0,1) 32%, rgba(255,149,0,1) 63%, rgba(255,0,0,1) 100%);
+}
+
+.heatthEraser
+{
+  transition: 400ms;
+  height: 100%;
+  background-color: #171717;
+  opacity: 0.95;
+  float: right;
+}
+
+.contrincantBar .heatthEraser
+{
+  float: left;
+}
+
+.narrador, .narradorTurno
+{
+  font-size: 1.5vw;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bolder;
+}
+
+.attackImg
+{
+  background-image: url("../../../assets/antes-luchar/atacar.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.regenerateImg
+{
+  background-image: url("../../../assets/antes-luchar/regenerar.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.notInTurn
+{
+  pointer-events: none;
+  filter: grayscale(100%);
+  opacity: 0.8;
+}
+
+.damaged
+{
+  animation: damaged 0.4s 4;
+}
+
+@keyframes damaged {
+  0% {
+    filter: grayscale(10%) brightness(60%) sepia(100%) hue-rotate(-50deg) saturate(600%) contrast(0.8);
+  }
+  100% {
+    filter: none;
+  }
+}
+
+.damagedRandom{
+  animation: damageRandom 4s 1;
+}
+@keyframes damageRandom {
+  0% {
+    filter: grayscale(20%) brightness(100%) sepia(50%) hue-rotate(520deg) saturate(600%) contrast(1);
+  }
+  100% {
+    filter: none;
+  }
+}
+
+
+.regenerated{
+  animation: regenerated 0.4s 2;
+}
+@keyframes regenerated {
+  0% {
+    filter: grayscale(20%) brightness(100%) sepia(50%) hue-rotate(60deg) saturate(600%) contrast(1);
+  }
+  100% {
+    filter: none;
+  }
+}
+
+span
+{
+  text-shadow: 1px 2px 9px rgb(30, 30, 30);
+}
+
+.inComing
+{
+  pointer-events: none;
+}
+
+.endOfBattle
+{
+  animation: zoom-in-zoom-out 12s ease-in 1;
+  animation-delay: 4s;
+  pointer-events: none;
+}
+
+@keyframes zoom-in-zoom-out {
+  0%
+  {
+    transform: scale(1, 1);
+    filter: brightness(100%) blur(0px);
+  }
+  50%
+  {
+    filter: brightness(0%)
+  }
+  100%
+  {
+    transform: scale(10, 10);
+    filter: brightness(0%) blur(5px);
+  }
+}

@@ -1,0 +1,24 @@
+<div class="box d-grid align-content-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-3" *ngFor="let luchador of luchadores">
+        <div class="row formLuchador mb-3 d-flex justify-content-center align-content-center">
+          <div class="d-grid">
+            <span class="retratoBox m-auto">
+              <img class="border border-dark border-2 " [src]="this.luchador.retrato">
+            </span>
+            <div class=" d-flex justify-content-center align-items-center">
+              <button class="btn btn-primary m-2"
+                      [routerLink]="['/modificar-luchador-retrato-nombre/'+this.luchador.id]"><i
+                class="fa-solid fa-pencil"></i></button>
+              <button class="btn btn-danger m-2" [disabled]="longitudLista" (click)="borrarLuchador(this.luchador.id)">
+                <i
+                  class="fa-solid fa-trash"></i></button>
+            </div>
+          </div>
+        </div>
+        <div class="col-2"></div>
+      </div>
+    </div>
+  </div>
+</div>

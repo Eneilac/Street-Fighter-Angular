@@ -1,0 +1,113 @@
+<div class="body">
+  <div class="box">
+    <div class="container-fluid">
+      <img id="title" src="../../../assets/nav/modificarColorUbicacion.png">
+      <div class="row">
+        <div class="col-2 d-flex justify-content-center align-items-center">
+          <button class="btn btn-primary" [routerLink]="['/modificar-luchador-retrato-nombre',idLuchador]"><i
+            class="fa-solid fa-angle-left"></i></button>
+        </div>
+        <div class="col-8 boxPrincipal d-grid justify-content-center align-items-center">
+          <form [formGroup]="formColorUbicacion" (submit)="subirDatos()">
+            <!-- Inicio Selector de Ubicaciones -->
+            <div class="form-group centro row d-flex justify-content-center align-items-center">
+              <div class="col-12 m-2">
+                <h3>Elige una ubicación</h3>
+              </div>
+              <div class="col-6 flagPicker">
+                <input type="radio" id="spain" (click)="selectRouteAudio()"
+                       name="ubicacion" value="spain" formControlName="ubicacion"/>
+                <label for="spain"><span class="spain flagInactive"></span></label>
+
+                <input type="radio" id="france" (click)="selectRouteAudio()" name="ubicacion" value="france"
+                       formControlName="ubicacion"/>
+                <label for="france"><span class="france flagInactive"></span></label>
+
+                <input type="radio" id="india" (click)="selectRouteAudio()"
+                       name="ubicacion" value="india" formControlName="ubicacion"/>
+                <label for="india"><span class="india flagInactive"></span></label>
+
+                <input type="radio" id="rusia" (click)="selectRouteAudio()"
+                       name="ubicacion" value="rusia" formControlName="ubicacion"/>
+                <label for="rusia"><span class="rusia flagInactive"></span></label>
+
+                <input type="radio" id="japan" (click)="selectRouteAudio()"
+                       name="ubicacion" value="japan" formControlName="ubicacion"/>
+                <label for="japan"><span class="japan flagInactive"></span></label>
+
+                <input type="radio" id="brazil" (click)="selectRouteAudio()" name="ubicacion" value="brazil"
+                       formControlName="ubicacion"/>
+                <label for="brazil"><span class="brazil flagInactive"></span></label>
+
+                <input type="radio" id="usa" (click)="selectRouteAudio()"
+                       name="ubicacion" value="usa" formControlName="ubicacion"/>
+                <label for="usa"><span class="usa flagInactive"></span></label>
+
+                <input type="radio" id="congo" (click)="selectRouteAudio()"
+                       name="ubicacion" value="congo" formControlName="ubicacion"/>
+                <label for="congo"><span class="congo flagInactive"></span></label>
+              </div>
+              <!-- Fin Selector de Ubicaciones -->
+              <!-- Principio Selector de Colores   -->
+              <div class="col-12 m-2">
+                <h3>Elige un color</h3>
+              </div>
+              <div class="col-10 colorPicker">
+                <input type="radio" (click)="selectRouteAudio()" name="color" id="red" value="red"
+                       formControlName="color"/>
+                <label for="red"><span class="red"></span></label>
+
+                <input type="radio" (click)="selectRouteAudio()" name="color" id="green" value="green"
+                       formControlName="color"/>
+                <label for="green"><span class="green"></span></label>
+
+                <input type="radio" (click)="selectRouteAudio()" name="color" id="yellow" value="yellow"
+                       formControlName="color"/>
+                <label for="yellow"><span class="yellow"></span></label>
+
+                <input type="radio" (click)="selectRouteAudio()" name="color" id="olive" value="olive"
+                       formControlName="color"/>
+                <label for="olive"><span class="olive"></span></label>
+
+                <input type="radio" (click)="selectRouteAudio()" name="color" id="orange" value="orange"
+                       formControlName="color"/>
+                <label for="orange"><span class="orange"></span></label>
+
+                <input type="radio" (click)="selectRouteAudio()" name="color" id="teal" value="cyan"
+                       formControlName="color"/>
+                <label for="teal"><span class="teal"></span></label>
+
+                <input type="radio" (click)="selectRouteAudio()" name="color" id="blue" value="blue"
+                       formControlName="color"/>
+                <label for="blue"><span class="blue"></span></label>
+
+                <input type="radio" (click)="selectRouteAudio()" name="color" id="purple" value="purple"
+                       formControlName="color"/>
+                <label for="purple"><span class="purple"></span></label>
+              </div>
+            </div>
+            <div *ngIf="aplicado" class="text-white validacion btn btn-success">
+                <p>¡Cambios Aplicados!</p>
+            </div>
+            <div class="row d-flex justify-content-center">
+              <button class="btn btn-primary apply">Aplicar</button>
+            </div>
+          </form>
+        </div>
+
+
+        <!-- Fin Selector de Colores -->
+        <div class="col-2 d-flex justify-content-center align-items-center">
+          <button class="btn btn-primary" [routerLink]="['/modificar-luchador-atributos',idLuchador]">
+            <i class="fa-solid fa-angle-right"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+  <button class="btn btn-danger cancel" [routerLink]="['/modificar-luchador']">Cancelar</button>
+  <button class="btn btn-success finalizar d-none" [disabled]="true">Finalizar</button>
+</div>

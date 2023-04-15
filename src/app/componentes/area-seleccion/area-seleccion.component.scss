@@ -1,0 +1,203 @@
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
+html,body{
+  width:100vw;
+  height: 100%;
+  margin:0 auto;
+  box-sizing: border-box;
+  border: 4px solid blue;
+  background-color: black;
+}
+.background
+{
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  overflow:auto;
+  width:100vw;
+  height:100vh;
+  cursor: crosshair;
+}
+
+i
+{
+  font-size: 40px;
+  color: white;
+  margin: 20px;
+}
+
+#title img
+{
+  transition: 400ms;
+  width: 12%;
+  z-index: 100;
+  transform: translate(0px, 4vw);
+}
+
+#title img:hover
+{
+  transition: 400ms;
+  transform: scale(110%) rotate(5deg) translate(0px, 4vw);
+}
+
+
+#title img:active
+{
+  transition: 200ms;
+  transform: scale(105%) translate(0px, 4vw);
+}
+
+
+
+.player div{
+  width: 8vw;
+  height: 8vw;
+  box-sizing: border-box;
+}
+
+.player
+{
+  width: 16vw;
+  user-select: none;
+  z-index: 100;
+  box-sizing: border-box;
+}
+
+.playersBox
+{
+  width: 25vw !important;
+}
+
+
+.playerAnimation
+{
+  height: 30vw;
+  width: 25vw !important;
+}
+
+.playerAnimation img
+{
+  height: 25vw;
+  z-index: 0;
+}
+
+.playerStats
+{
+  background-color: green;
+  height: 100%;
+  width: 20vw;
+}
+
+.charBox
+{
+  padding: 0;
+  border: 0.1vw solid #e0dbf7;
+  cursor: crosshair;
+}
+
+.stats
+{
+  z-index: 100;
+  height: 30vw;
+  width: 25vw !important;
+  display: grid;
+  grid-template-rows: auto auto;
+  align-content: center;
+}
+
+.map
+{
+  width: 40vw;
+  height: 20vw;
+  z-index: 0;
+  position: absolute;
+  right: 0vw;
+  top: 1vw;
+  right: 6vw;
+
+
+  background-image: url('../../../assets/map/map.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
+.map img
+{
+  transition: 400ms;
+
+  width: 5vw;
+  position: absolute;
+  filter: grayscale(100%);
+
+  opacity: 0.2;
+}
+
+.map img:hover
+{
+  transition: 400ms;
+  filter: grayscale(00%);
+  transform: scale(110%);
+  opacity: 1;
+}
+
+.mapActive
+{
+  transition: 400ms;
+  filter: grayscale(00%) !important;
+  transform: scale(140%);
+  opacity: 1 !important;
+}
+
+.map .usa
+{
+  top: 1vw;
+  right: 8vw;
+}
+
+.map .brazil
+{
+  width: 4vw;
+  top: 5vw;
+  right: 5vw;
+}
+
+.map .spain
+{
+  top: 7vw;
+  left: 3vw;
+}
+
+.map .france
+{
+  top: 5.5vw;
+  left: 7.5vw;
+}
+
+.map .rusia
+{
+  top: 1vw;
+  right: 18vw;
+}
+
+.map .india
+{
+  top: 6vw;
+  right: 22vw;
+}
+
+.map .congo
+{
+  bottom: 2vw;
+  left: 8vw;
+}
+
+.map .japan
+{
+  bottom: 4vw;
+  left: 18vw;
+}
+
+
+

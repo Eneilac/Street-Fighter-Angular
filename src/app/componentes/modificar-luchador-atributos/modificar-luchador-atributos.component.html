@@ -1,0 +1,71 @@
+<div class="body">
+  <div class="box">
+    <div class="container-fluid">
+      <img id="title" src="../../../assets/nav/modificarAtributos.png">
+      <div class="row">
+        <div class="col-2 d-flex justify-content-center align-items-center">
+          <button class="btn btn-primary" [routerLink]="['/modificar-luchador-color-ubicacion',luchador.id]" ><i class="fa-solid fa-angle-left"></i></button>
+        </div>
+
+        <div class="col-8 boxPrincipal d-flex justify-content-center align-items-center">
+
+          <form [formGroup]="formAtributos" (submit)="editarLuchador()" class="w-100 atributosBox">
+
+            <div class="row">
+              <div class="col-5"></div>
+              <div class="col-2">
+                <label for="fuerza">Fuerza</label>
+                <input style="text-align: center" type="number" min="1" max="10" size="2" class="form-control" id="fuerza" formControlName="fuerza" placeholder="Fuerza">
+              </div>
+              <div class="col-5"></div>
+            </div>
+
+            <div class="row">
+              <div class="col-2"></div>
+              <div class="col-2">
+                <label for="fuerza">Técnica</label>
+                <input style="text-align: center" type="number" min="1" max="10" size="2" class="form-control" id="tecnica" formControlName="tecnica" placeholder="Técnica">
+              </div>
+              <div class="col-4"></div>
+              <div class="col-2">
+                <label for="fuerza">Rango</label>
+                <input style="text-align: center" type="number" min="1" max="10" size="2" class="form-control" id="rango" formControlName="rango" placeholder="Rango">
+              </div>
+              <div class="col-2"></div>
+            </div>
+
+            <div class="row">
+              <div class="col-3"></div>
+              <div class="col-2">
+                <label for="fuerza">Vida</label>
+                <input style="text-align: center" type="number" min="1" max="10" size="2" class="form-control" id="vida" formControlName="vida" placeholder="Vida">
+              </div>
+              <div class="col-2"></div>
+              <div class="col-2">
+                <label for="fuerza">Destreza</label>
+                <input style="text-align: center" type="number" min="1" max="10" size="2" class="form-control" id="destreza" formControlName="destreza" placeholder="Destreza">
+              </div>
+              <div class="col-3"></div>
+            </div>
+            <div *ngIf="aplicado" class="text-white validacion btn btn-success">
+              <p>¡Cambios Aplicados!</p>
+            </div>
+            <div class="col-12">
+              <button class="btn btn-primary apply" [disabled]="this.formAtributos.invalid">Aplicar</button>
+            </div>
+
+          </form>
+
+        </div>
+
+        <div class="col-2 d-flex justify-content-center align-items-center">
+          <button class="btn btn-primary" [routerLink]="['/modificar-luchador-animacion-stage',luchador.id]" ><i class="fa-solid fa-angle-right"></i></button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <button class="btn btn-danger cancel" [routerLink]="['/modificar-luchador']">Cancel</button>
+  <button class="btn btn-success finalizar opacity-0" [disabled]="true" >Finalizar</button>
+</div>

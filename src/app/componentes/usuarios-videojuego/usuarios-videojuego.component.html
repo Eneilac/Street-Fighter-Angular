@@ -1,0 +1,73 @@
+<div class="box d-grid align-content-center">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-4 d-flex align-items-center justify-content-center">
+        <div class="formulario">
+          <!--Inicio formulario -->
+          <div>
+            <img class="titulos" src="../../../assets/usuarios/registrarte.png">
+          </div>
+          <div>
+            <form [formGroup]="formUsuario" (submit)="enviar()">
+              <!-- Text input -->
+              <div class="row mb-3">
+                <div class="col-12 d-flex align-content-end">
+                  <label for="usuario">Usuario:</label>
+                </div>
+                <div class="col-12 d-flex align-content-end">
+                  <input type="text" name="textArea" id="usuario" placeholder="Usuario" formControlName="usuario">
+                </div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-12 d-flex align-content-end">
+                  <label for="password">Password:</label>
+                </div>
+                <div class="col-12 d-flex align-content-end">
+                  <input type="password" name="pasword" id="password" placeholder="Password" formControlName="password">
+                </div>
+
+              </div>
+
+              <hr class="mb-3 text-white">
+
+
+              <p [ngClass]="error ? 'opacity-100':'opacity-0'" class="btn btn-danger" id="textoDanger">El usuario introducido ya se ha registrado.</p>
+              <div [ngClass]="aplicado ? 'opacity-100':'opacity-0'" class="text-white validacion btn btn-success">
+                <p>¡Usuario añadido!</p>
+              </div>
+              <button class="btn btn-primary btn-lg btn-block" type="submit" [disabled]="this.formUsuario.invalid">
+                Aceptar
+              </button>
+            </form>
+          </div>
+          <!--Fin formulario -->
+        </div>
+      </div>
+
+      <div class="col-3 d-flex align-items-center justify-content-center">
+        <img class="w-50" src="../../../assets/luchadores/animaciones/dhalsim.gif">
+      </div>
+
+      <div class="col-5 contenedor-comentarios">
+        <img class="titulos" src="../../../assets/usuarios/USUARIOS.png">
+        <ng-container *ngFor="let usuario of listaUsuarios">
+        <div class="card mb-2 comentaryBox"  *ngIf="usuario.role != 'ROLE_ADMIN'">
+          <div class="card-body d-flex justify-content-start">
+            <p class="m-0">Nombre de usuario: {{usuario.usuario}}</p>
+          </div>
+          <div class="card-footer w-100 d-flex align-items-center justify-content-center">
+            <p class="m-0 d-flex opacity-50 justify-content-end">Registrado el: {{usuario.fecha}}</p>
+          </div>
+          <button class="btn text-white ml-2 trashButton">
+            <i class="fa-solid fa-trash" (click)="borrarUsuario(usuario.id)"></i>
+          </button>
+        </div>
+        </ng-container>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+

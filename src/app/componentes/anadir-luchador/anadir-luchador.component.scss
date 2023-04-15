@@ -1,0 +1,214 @@
+.body{
+  background: linear-gradient(-45deg, #6497b1, #005b96, #03396c, #011f4b);
+  background-size: 400% 400%;
+  animation: gradient 25s ease infinite;
+  width: 100%;
+  overflow: auto;
+  box-sizing: border-box;
+}
+.form-group{
+  margin-top: 2vw;
+  margin-bottom: 2vw;
+  color: white;
+}
+img{
+  width: 8vw;
+  height: 8vw;
+  border: 3px solid white;
+}
+.form-group label, .form-group .labelUbi{
+  font-weight: bolder;
+  font-size: 1vw;
+  display: flex;
+  justify-content: left;
+}
+.centro label{
+  font-weight: bolder;
+  font-size: 1vw;
+  margin: 1vw;
+  display: flex;
+  justify-content: center;
+}
+input,button,select,option{
+  font-size: 0.9vw;
+}
+
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+/* FORM BOXES */
+
+.animationBox
+{
+  width: 14vw;
+  height: 16vw;
+}
+
+.backgroundBox
+{
+  width: 22vw;
+  height: 10vw;
+}
+
+.formBox{
+  margin-top: 6vw;
+}
+
+.radar
+{
+  background-image: url("../../../assets/atributosComponent/radar.png");
+  background-size: 30%;
+  background-repeat: no-repeat;
+  background-position: 50% 65%;
+}
+#ubicacionSelect option,#ubicacionSelect{
+  text-transform: uppercase;
+}
+/**/
+$colors: (
+  red: #DB2828,
+  orange: #F2711C,
+  yellow: #FBBD08,
+  olive: #B5CC18,
+  green: #21BA45,
+  teal: #00B5AD,
+  blue: #2185D0,
+  purple: #A333C8,
+);
+input[type="radio"] {
+
+  display: none;
+  &:checked + label {
+    span { transform: scale(1.25); }
+    @each $name, $value in $colors {
+      .#{$name} {
+        transition: 400ms;
+        opacity: 1;
+        transform: scale(150%);
+      }
+    } // !@each
+  } // !&:checked + label
+}
+
+.colorPicker label {
+  display: inline-block;
+  width: 1vw;
+  height: 1vw;
+  margin-right: 10px;
+  cursor: pointer;
+  &:hover {
+    span {
+      transform: scale(1.25);
+    }
+  }
+  span {
+    transition: 400ms;
+    display: block;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    transition: transform .2s ease-in-out;
+    @each $name, $value in $colors {
+      &.#{$name} {
+        background: $value;
+      }
+    }
+  }
+}
+
+
+.inactiveForm{
+  opacity: 0.3;
+  pointer-events: none;
+}
+/**Imagenes**/
+
+
+/**/
+$flags: (
+  spain: "../../../assets/map/spain.png",
+  france:"../../../assets/map/france.png",
+  india: "../../../assets/map/india.png",
+  rusia: "../../../assets/map/rusia.png",
+  japan: "../../../assets/map/japan.png",
+  brazil: "../../../assets/map/brazil.png",
+  usa: "../../../assets/map/usa.png",
+  congo: "../../../assets/map/congo.png",
+);
+input[type="radio"] {
+
+  display: none;
+
+  &:checked + label {
+    span {
+      transform: scale(1.25);
+    }
+
+    @each $name, $value in $flags {
+      .#{$name} {
+        transition: 400ms;
+        opacity: 1;
+        transform: scale(150%);
+      }
+    }
+    // !@each
+  }
+
+  // !&:checked + label
+}
+
+.flagPicker label {
+  display: inline-block;
+  pointer-events: none;
+  width: 6vw;
+  height: 6vw;
+  margin-right: 10px;
+  cursor: pointer;
+
+  &:hover {
+    span {
+      transform: scale(1.25);
+    }
+  }
+
+  span {
+    transition: 400ms;
+    display: block;
+    width: 6vw;
+    height: 6vw;
+    opacity: 0.5;
+    transition: transform .2s ease-in-out;
+    @each $name, $value in $flags {
+      &.#{$name} {
+        background-image: url($value);
+        background-size: cover;
+      }
+    }
+  }
+}
+
+#title {
+  width: 50vw;
+}
+
+.flagInactive {
+  filter: grayscale(100%);
+}
+
+.flagActive {
+  pointer-events: all !important;
+}
+
+
+

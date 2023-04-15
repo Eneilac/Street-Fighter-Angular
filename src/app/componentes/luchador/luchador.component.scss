@@ -1,0 +1,53 @@
+img
+{
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.animationConfig
+{
+  animation-name: blinking;
+  animation-duration: 100ms;
+  animation-iteration-count: 100;
+}
+
+@keyframes blinking {
+  50% {
+    border-color: white;
+  }
+}
+.olive
+{
+  border: 6px solid #B5CC18;
+}
+.orange
+{
+  border: 6px solid orange;
+}
+.blue
+{
+  border: 6px solid blue;
+}
+.green
+{
+  border: 6px solid green;
+}
+.red
+{
+  border: 6px solid red;
+}
+
+.cyan
+{
+  border: 6px solid #00B5AD;
+}
+.yellow
+{
+  border: 6px solid #FBBD08;
+}
+
+.purple
+{
+  border: 6px solid purple;
+}

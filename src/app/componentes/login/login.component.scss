@@ -1,0 +1,84 @@
+.titulos{
+  width: 10vw;
+}
+
+.box {
+  height: 100vh;
+  background: linear-gradient(-45deg, #6497b1, #005b96, #03396c, #011f4b);
+  background-size: 400% 400%;
+  animation: gradient 25s ease infinite;
+  width: 100%;
+  overflow: auto;
+  box-sizing: border-box;
+}
+
+.formulario{
+  border-radius: 10px;
+  background-color: rgba(135, 206, 250, 0.2);
+  padding: 20px;
+}
+
+label{
+  color: white;
+  padding: 4px;
+}
+/* Arreglos de VW */
+
+button, input, i, p, label
+{
+  font-size: 0.9vw;
+}
+
+input
+{
+  width: 100%;
+}
+
+
+
+#textoDanger
+{
+  pointer-events: none;
+}
+
+/* Estilos de los Usuarios */
+
+.comentaryBox
+{
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #e5e5e5;
+}
+
+.card-header p
+{
+  font-size: 0.6vw !important;
+}
+
+.trashButton
+{
+  transition: 400ms;
+  width: max-content;
+  position: absolute;
+  bottom: 0.05vw;
+  right: 0.05vw;
+  opacity: 0.5;
+}
+
+.trashButton:hover
+{
+  transition: 400ms;
+  opacity: 1;
+  transform: rotate(10deg) scale(120%) !important;
+}
+.validacion{
+  margin: 0.5vw auto;
+  pointer-events: none;
+  border-radius: 4px;
+  width: max-content;
+  display: block;
+}
+
+.validacion p{
+  margin: 0;
+}
+

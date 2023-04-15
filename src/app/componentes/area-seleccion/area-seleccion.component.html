@@ -1,0 +1,37 @@
+<div class="background" [style.background-image]="'url(' + this.luchadores[this.indiceSeleccionado].stage + ')'">
+  <div class="container-fluid h-100 d-grid align-items-center">
+    <div class="col d-flex justify-content-center" id="title">
+      <img (click)="makeSound()" src="https://i.imgur.com/AAQeBY5.png">
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="playersBox col-sm col-md-4 d-grid justify-content-center align-items-center w-auto p-5">
+          <div class="row player">
+            <div app-luchador *ngFor="let luchador of luchadores, let i = index" [numLuchador]=i [indiceSeleccionado]="indiceSeleccionado" [luchador]="luchador" class="col-md-4 charBox"> //APP-LUCHADOR
+            </div>
+          </div>
+        </div>
+        <div class="col-sm w-auto d-flex justify-content-center">
+          <div class="playerAnimation d-grid align-items-end justify-content-center">
+            <img class="pl" src="{{this.luchadores[this.indiceSeleccionado].animacion}}">
+          </div>
+        </div>
+        <div class="stats col-6">
+          <app-atributos [indiceSeleccionado]="indiceSeleccionado" [luchadores]="luchadores" *ngIf="indiceSeleccionado != -1"></app-atributos>
+        </div>
+      </div>
+    </div>
+    <div class="map">
+      <img class="usa" [ngClass]="this.luchadores[this.indiceSeleccionado ].ubi == 'usa'? 'mapActive' : ''"  src="../../../assets/map/usa.png">
+      <img class="brazil" [ngClass]="this.luchadores[this.indiceSeleccionado ].ubi == 'brazil'? 'mapActive' : ''" src="../../../assets/map/brazil.png">
+      <img class="spain" [ngClass]="this.luchadores[this.indiceSeleccionado ].ubi == 'spain'? 'mapActive' : ''" src="../../../assets/map/spain.png">
+      <img class="france" [ngClass]="this.luchadores[this.indiceSeleccionado ].ubi == 'france'? 'mapActive' : ''" src="../../../assets/map/france.png">
+      <img class="rusia" [ngClass]="this.luchadores[this.indiceSeleccionado ].ubi == 'rusia'? 'mapActive' : ''" src="../../../assets/map/rusia.png">
+      <img class="india" [ngClass]="this.luchadores[this.indiceSeleccionado ].ubi == 'india'? 'mapActive' : ''" src="../../../assets/map/india.png">
+      <img class="congo" [ngClass]="this.luchadores[this.indiceSeleccionado ].ubi == 'congo'? 'mapActive' : ''" src="../../../assets/map/congo.png">
+      <img class="japan" [ngClass]="this.luchadores[this.indiceSeleccionado ].ubi == 'japan'? 'mapActive' : ''" src="../../../assets/map/japan.png">
+    </div>
+  </div>
+</div>
+
+

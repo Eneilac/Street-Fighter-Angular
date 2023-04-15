@@ -1,0 +1,168 @@
+<div class="body d-flex justify-content-center">
+<div class="container formBox">
+  <div class="row justify-content-center">
+      <div class="col-6">
+    <form [formGroup]="formAdd" (submit)="nuevoLuchador()"  [ngClass]="this.opacityForm ? 'inactiveForm':''">
+
+      <div class="form-group row centro d-flex justify-content-center align-items-center">
+
+        <div class="col-6">
+          <label for="nombreLuchador">Nombre</label>
+          <input type="text" class="form-control" id="nombreLuchador" formControlName="nombre" maxlength="10" placeholder="Nombre">
+        </div>
+
+        <div class="col-12"></div>
+
+        <div class="col-12 flagPicker">
+          <div class="col-12 d-flex justify-content-center mt-4">
+            <span class="labelUbi">Ubicación</span>
+          </div>
+            <input type="radio" id="spain" (click)="selectRouteAudio()"
+                   name="ubicacion" value="spain" formControlName="ubicacion"/>
+            <label for="spain"><span class="spain flagInactive"></span></label>
+
+            <input type="radio" id="france" (click)="selectRouteAudio()" name="ubicacion" value="france"
+                   formControlName="ubicacion"/>
+            <label for="france"><span class="france flagInactive"></span></label>
+
+            <input type="radio" id="india" (click)="selectRouteAudio()"
+                   name="ubicacion" value="india" formControlName="ubicacion"/>
+            <label for="india"><span class="india flagInactive"></span></label>
+
+            <input type="radio" id="rusia" (click)="selectRouteAudio()"
+                   name="ubicacion" value="rusia" formControlName="ubicacion"/>
+            <label for="rusia"><span class="rusia flagInactive"></span></label>
+
+            <input type="radio" id="japan" (click)="selectRouteAudio()"
+                   name="ubicacion" value="japan" formControlName="ubicacion"/>
+            <label for="japan"><span class="japan flagInactive"></span></label>
+
+            <input type="radio" id="brazil" (click)="selectRouteAudio()" name="ubicacion" value="brazil"
+                   formControlName="ubicacion"/>
+            <label for="brazil"><span class="brazil flagInactive"></span></label>
+
+            <input type="radio" id="usa" (click)="selectRouteAudio()"
+                   name="ubicacion" value="usa" formControlName="ubicacion"/>
+            <label for="usa"><span class="usa flagInactive"></span></label>
+
+            <input type="radio" id="congo" (click)="selectRouteAudio()"
+                   name="ubicacion" value="congo" formControlName="ubicacion"/>
+            <label for="congo"><span class="congo flagInactive"></span></label>
+        </div>
+
+      </div>
+
+
+      <div class="form-group centro row d-flex justify-content-center align-items-center">
+        <div class="col-12">
+          <label class="m-0">Color Picker</label>
+        </div>
+        <div class="col-10 colorPicker">
+          <input type="radio" (click)="selectRouteAudio()" name="color" id="red" value="red" formControlName="color"/>
+          <label for="red"><span class="red"></span></label>
+
+          <input type="radio" (click)="selectRouteAudio()" name="color" id="green" value="green" formControlName="color"/>
+          <label for="green"><span class="green"></span></label>
+
+          <input type="radio" (click)="selectRouteAudio()" name="color" id="yellow" value="yellow" formControlName="color"/>
+          <label for="yellow"><span class="yellow"></span></label>
+
+          <input type="radio" (click)="selectRouteAudio()" name="color" id="olive" value="olive" formControlName="color"/>
+          <label for="olive"><span class="olive"></span></label>
+
+          <input type="radio" (click)="selectRouteAudio()" name="color" id="orange" value="orange" formControlName="color"/>
+          <label for="orange"><span class="orange"></span></label>
+
+          <input type="radio" (click)="selectRouteAudio()" name="color" id="teal" value="cyan" formControlName="color"/>
+          <label for="teal"><span class="teal"></span></label>
+
+          <input type="radio" (click)="selectRouteAudio()" name="color" id="blue" value="blue" formControlName="color"/>
+          <label for="blue"><span class="blue"></span></label>
+
+          <input type="radio" (click)="selectRouteAudio()" name="color" id="purple" value="purple" formControlName="color"/>
+          <label for="purple"><span class="purple"></span></label>
+
+        </div>
+
+      </div>
+
+      <hr class="mt-2 text-white">
+
+      <div class="form-group row align-items-center justify-content-center d-grid">
+        <div class="col-12 mb-3 mt-2 align-items-center justify-content-center d-grid">
+          <label for="retrato">Retrato</label>
+          <img [src]="this.retratoPreview != null? this.retratoPreview: '../../../assets/skeletonLoader.gif'" class="retratoBox">
+        </div>
+        <div class="col-12">
+            <input type="file" class="form-control" (change)="setRetrato($event)" formControlName="retrato" id="retrato">
+        </div>
+      </div>
+
+      <div class="form-group row align-items-center d-grid">
+        <label for="animacion">Animación</label>
+        <div class="col-3 mb-3 mt-2">
+          <img class="animationBox" [src]="this.animPreview != null? this.animPreview: '../../../assets/skeletonLoader.gif'">
+        </div>
+        <div class="col-12">
+          <input type="file" class="form-control" (change)="setAnim($event)" formControlName="animacion" id="animacion">
+        </div>
+      </div>
+
+      <div class="form-group row align-items-center d-grid">
+        <label for="fondo">Stage</label>
+        <div class="col-3 mb-3 mt-2">
+          <img class="backgroundBox" [src]="this.fondoPreview != null? this.fondoPreview: '../../../assets/skeletonLoader.gif'">
+        </div>
+        <div class="col-12">
+          <input type="file" class="form-control" (change)="setFondo($event)" formControlName="fondo" id="fondo">
+        </div>
+      </div>
+
+      <!--ATRIBUTOS FORM-->
+
+      <div class="form-group row pt-4 centro radar">
+
+        <h3>ATRIBUTOS</h3>
+        <hr class="mt-2">
+
+        <div class="col-4"></div>
+        <div class="col-4 mt-1 mb-2">
+          <label for="fuerza">Fuerza</label>
+          <input type="number" min="1" max="10" class="form-control" formControlName="fuerza" id="fuerza" placeholder="Fuerza">
+        </div>
+        <div class="col-4"></div>
+
+        <div class="col-4 mt-2 mb-5">
+          <label for="Vida">Vida</label>
+          <input type="number" min="1" max="10" class="form-control" id="vida" formControlName="vida" placeholder="Vida">
+        </div>
+        <div class="col-4"></div>
+        <div class="col-4 mt-2 mb-5">
+          <label for="destreza">Destreza</label>
+          <input type="number" min="1" max="10" class="form-control" id="destreza" formControlName="destreza" placeholder="Destreza">
+        </div>
+
+        <div class="col-1"></div>
+        <div class="col-4 mt-5 mb-5">
+          <label for="tecnica">Tecnica</label>
+          <input type="number" min="1" max="10" class="form-control" formControlName="tecnica" id="tecnica" placeholder="Tecnica">
+        </div>
+        <div class="col-2"></div>
+        <div class="col-4 mt-5 mb-5">
+          <label for="rango">Rango</label>
+          <input type="number" min="1" max="10" class="form-control" formControlName="rango" id="rango" placeholder="Rango">
+        </div>
+        <div class="col-1"></div>
+
+      </div>
+
+      <hr class="mt-2 text-white">
+      <div class="form-group pb-5">
+        <button [disabled]="formAdd.invalid" class="btn btn-warning">Añadir Luchador</button>
+      </div>
+
+    </form>
+    </div>
+  </div>
+</div>
+</div>

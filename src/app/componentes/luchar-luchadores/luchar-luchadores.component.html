@@ -1,0 +1,55 @@
+<div class="bodyBox" style="background-image: url('{{ this.luchador.stage}}');"
+     [ngClass]="this.battleStatus == 'inComing'? 'inComing':''
+     ||
+     this.battleStatus == 'endOfBattle'? 'endOfBattle':''">
+  <div class="container d-grid align-items-end">
+    <div class="row">
+
+      <div class="row d-flex justify-content-center">
+        <div class="col-4 healthBar fighterBar">
+          <div class="heatthEraser" style="width: {{100 - (this.luchador.vida*10)}}%"></div>
+        </div>
+        <div class="col-4">
+
+        </div>
+        <div class="col-4 healthBar contrincantBar">
+          <div class="heatthEraser" style="width: {{100 - (this.randomPlayer.vida*10)}}%"></div>
+        </div>
+      </div>
+
+      <div class="col-4 d-grid align-items-end justify-content-center" [ngClass]="whatTurn == false && regenerated? 'regenerated':''">
+        <img src="{{this.luchador.animacion}}"
+             [ngClass]="whatTurn && damaged? 'damaged':''">
+      </div>
+      <div class="col-4 d-grid align-items-end justify-content-center">
+        <img class="vs" src="../../../assets/antes-luchar/vs.png">
+      </div>
+      <div class="col-4 d-grid align-items-end justify-content-center" [ngClass]="whatTurn && regenerated? 'regenerated':''">
+        <img class="oponent" src="{{this.randomPlayer.animacion}}"
+             [ngClass]="whatTurn == false && damaged? 'damaged':''">
+      </div>
+
+
+      <div class="row mt-4 attackRow">
+        <div class="col-4">
+          <div class="row" [ngClass]="whatTurn? '':'notInTurn'">
+            <div class="col-6 attackBox d-flex align-items-center justify-content-center attack attackImg" (click)="makeAttack(1)" (mouseover)="buttonSound()"></div>
+            <div class="col-6 attackBox d-flex align-items-center justify-content-center regenerate regenerateImg" (click)="makeAttack(2)" (mouseover)="buttonSound()"></div>
+          </div>
+        </div>
+        <div class="col-4 p-2">
+          <span class="narradorTurno"></span>
+          <span class="narrador"></span>
+        </div>
+        <div class="col-4">
+          <div class="row" [ngClass]="whatTurn? 'notInTurn':''">
+            <div class="col-6 attackBox d-flex align-items-center justify-content-center attack attackImg" (click)="makeAttack(1)" (mouseover)="buttonSound()"></div>
+            <div class="col-6 attackBox d-flex align-items-center justify-content-center regenerate regenerateImg" (click)="makeAttack(2)" (mouseover)="buttonSound()"></div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

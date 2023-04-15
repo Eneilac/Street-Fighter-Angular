@@ -1,0 +1,146 @@
+*{
+
+}
+
+#title{
+  width: 10vw;
+}
+
+.box {
+  height: 100vh;
+  background: linear-gradient(-45deg, #6497b1, #005b96, #03396c, #011f4b);
+  background-size: 400% 400%;
+  animation: gradient 25s ease infinite;
+  width: 100%;
+  overflow: auto;
+  box-sizing: border-box;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.formulario{
+  border-radius: 10px;
+  background-color: rgba(135, 206, 250, 0.2);
+  padding: 20px;
+}
+
+label{
+  color: white;
+  padding: 4px;
+}
+
+textarea{
+  opacity: 0.7;
+}
+
+.contenedor-comentarios{
+  overflow-y: scroll;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 4px;
+  height: 5%;
+
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #00aeff;
+  border-radius: 10px;
+  border: 1px solid #00aeff;
+}
+
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #00aeff rgba(255, 255, 255, 0.15);
+}
+*::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.15);
+}
+.contenedor-comentarios{
+  height: 35vw;
+}
+
+
+/* Arreglos de VW */
+
+button, input, i, p, label
+{
+  font-size: 0.9vw;
+}
+
+.comentaryBox
+{
+  width: 100%;
+}
+
+.textareaBox
+{
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 0.4vw;
+  color: white;
+  border: 0;
+}
+
+.textareaBox:focus
+{
+  border: 0;
+}
+
+.textoDanger
+{
+  pointer-events: none;
+}
+
+/* Estilos de los comentarios */
+
+.comentaryBox
+{
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #e5e5e5;
+}
+
+.card-header p
+{
+  font-size: 0.6vw !important;
+}
+
+.trashButton
+{
+  transition: 400ms;
+  width: max-content;
+  position: absolute;
+  bottom: 0.05vw;
+  right: 0.05vw;
+  opacity: 0.5;
+}
+
+.trashButton:hover
+{
+  transition: 400ms;
+  opacity: 1;
+  transform: rotate(10deg) scale(120%) !important;
+}
+
+.validacion{
+  margin: 0.5vw auto;
+  pointer-events: none;
+  border-radius: 4px;
+  width: max-content;
+  display: block;
+}
+
+.validacion p{
+  margin: 0;
+}

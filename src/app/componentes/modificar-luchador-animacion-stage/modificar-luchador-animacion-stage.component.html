@@ -1,0 +1,54 @@
+<div class="body">
+<div class="box">
+  <div class="container-fluid">
+    <img id="title" src="../../../assets/nav/modificarAnimacionStage.png">
+    <div class="row">
+      <div class="col-2 d-flex justify-content-center align-items-center">
+        <button class="btn btn-primary" [routerLink]="['/modificar-luchador-atributos',luchador.id]" ><i class="fa-solid fa-angle-left"></i></button>
+      </div>
+
+      <div class="col-8 boxPrincipal d-flex align-items-center justify-content-around">
+        <form (submit)="editarLuchador($event)">
+          <div class="row d-flex align-items-center">
+            <div class="col-5 mb-3">
+              <label>Animacion</label>
+            </div>
+            <div class="col-7 mb-3">
+              <label>Stage</label>
+            </div>
+          </div>
+          <div class="row d-flex align-items-center">
+            <div class="col-5 mb-5">
+              <img class="animationBox mb-4" [src]="this.animPreview" >
+            </div>
+            <div class="col-7 mb-5">
+              <img class="stageBox mb-4" [src]="this.fondoPreview" >
+            </div>
+          </div>
+          <div class="row d-flex align-items-center justify-content-center">
+            <div class="col-5 mb-5">
+              <input type="file" class="form-control" (change)="setAnim($event)">
+            </div>
+            <div class="col-7 mb-5">
+              <input type="file" class="form-control" (change)="setFondo($event)">
+            </div>
+          </div>
+          <div *ngIf="aplicado" class="text-white validacion btn btn-success">
+            <p>¡Cambios Aplicados!</p>
+          </div>
+          <div class="col-12">
+            <button class="btn btn-primary apply">Aplicar</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="col-2 d-flex justify-content-center align-items-center">
+        <button class="btn btn-primary opacity-0" [disabled]="true"><i class="fa-solid fa-angle-right"></i></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<button class="btn btn-danger cancel" [routerLink]="['/modificar-luchador']">Cancel</button>
+<button class="btn btn-success finalizar" [routerLink]="['/seleccion']">Finalizar</button>
+</div>
