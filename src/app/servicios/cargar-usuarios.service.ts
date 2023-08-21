@@ -18,24 +18,24 @@ export class CargarUsuariosService {
    * Funcion GET para traer todos los usuarios
    */
   getUsuarios(): Observable<IUsuario[]> {
-    return this.http.get<IUsuario[]>(environment.apiRest+"moises_usuarios");
+    return this.http.get<IUsuario[]>(environment.apiRest+"usuarios.json");
   }
   /**
    * Funcion POST para subir usuarios
    */
   subirUsuario(data: any): Observable<IUsuario> {
-    return this.http.post<IUsuario>(environment.apiRest+"moises_usuarios", data);
+    return this.http.post<IUsuario>(environment.apiRest+"usuarios.json", data);
   }
   /**
    * Funcion DEL para borrar un usuario determinado por una id
    */
   borrarUsuario(usuarioID: any): Observable<any> {
-    return this.http.delete(environment.apiRest+"moises_usuarios" + '/' + usuarioID);
+    return this.http.delete(environment.apiRest+"usuarios.json" + '/' + usuarioID);
   }
   /**
    * Funcion GET para traer un usuario determinado por una id
    */
   getUsuario(usuarioID: any): Observable<IUsuario> {
-    return this.http.get<IUsuario>(environment.apiRest+"moises_usuarios" + '/' + usuarioID);
+    return this.http.get<IUsuario>(environment.apiRest+"usuarios.json" + '/' + usuarioID);
   }
 }

@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiRest:'https://teleasistencia-p1.iesvjp.es/api-rest/'
+  apiRest:'https://streetfighter-d5aa1-default-rtdb.europe-west1.firebasedatabase.app/'
 };

@@ -18,7 +18,7 @@ export class CargarComentariosService {
    * Funcion GET que devuelve todos los comentarios
    */
   getComentarios(): Observable<IComentario[]> {
-    return this.http.get<IComentario[]>(environment.apiRest+"moises_comentarios");
+    return this.http.get<IComentario[]>(environment.apiRest+"comentarios.json");
   }
 
   /**
@@ -26,7 +26,7 @@ export class CargarComentariosService {
    * @param data
    */
   subirComentario(data: any): Observable<IComentario> {
-    return this.http.post<IComentario>(environment.apiRest+"moises_comentarios", data);
+    return this.http.post<IComentario>(environment.apiRest+"comentarios.json", data);
   }
 
   /**
@@ -34,6 +34,6 @@ export class CargarComentariosService {
    * @param comentID
    */
   borrarComentario(comentID: any): Observable<any> {
-    return this.http.delete(environment.apiRest+"moises_comentarios" + '/' + comentID);
+    return this.http.delete(environment.apiRest+"comentarios.json" + '/' + comentID);
   }
 }

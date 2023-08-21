@@ -18,7 +18,7 @@ export class CargarLuchadoresService {
    * Funcion GET para traer todos los luchadores
    */
   getLuchadores(): Observable<ILuchador[]> {
-    return this.http.get<ILuchador[]>(environment.apiRest+"moises_luchadores");
+    return this.http.get<ILuchador[]>(environment.apiRest+"luchadores.json");
   }
 
   /**
@@ -26,7 +26,7 @@ export class CargarLuchadoresService {
    * @param luchID
    */
   getLuchador(luchID:any): Observable<ILuchador> {
-    return this.http.get<ILuchador>(environment.apiRest+"moises_luchadores"+ '/'+ luchID);
+    return this.http.get<ILuchador>(environment.apiRest+"luchadores.json"+ '/'+ luchID);
   }
 
   /**
@@ -34,7 +34,7 @@ export class CargarLuchadoresService {
    * @param data
    */
   subirLuchador(data: any): Observable<ILuchador> {
-    return this.http.post<ILuchador>(environment.apiRest+"moises_luchadores", data);
+    return this.http.post<ILuchador>(environment.apiRest+"luchadores.json", data);
   }
 
   /**
@@ -43,7 +43,7 @@ export class CargarLuchadoresService {
    * @param data
    */
   guardaLuchador(luchID: any, data: any): Observable<any> {
-    return this.http.patch<any>(environment.apiRest+"moises_luchadores" + '/' + luchID, data);
+    return this.http.patch<any>(environment.apiRest+"luchadores.json" + '/' + luchID, data);
   }
 
   /**
@@ -51,6 +51,6 @@ export class CargarLuchadoresService {
    * @param luchID
    */
   borrarLuchador(luchID: any): Observable<any> {
-    return this.http.delete(environment.apiRest+"moises_luchadores"+ '/' + luchID);
+    return this.http.delete(environment.apiRest+"luchadores.json"+ '/' + luchID);
   }
 }
