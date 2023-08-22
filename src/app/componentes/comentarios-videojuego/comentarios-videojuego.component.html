@@ -50,17 +50,17 @@
 
       <div class="col-5 contenedor-comentarios">
 
-        <div class="card mb-2 comentaryBox" *ngFor="let comentario of comentarios">
+        <div class="card mb-2 comentaryBox" *ngFor="let key of getKeys()">
           <div class="card-header d-flex justify-content-start text-lowercase text-info">
-            <p class="m-0">{{comentario.usuario}}</p>
+            <p class="m-0">{{comentarios[key].usuario}}</p>
           </div>
           <div class="card-body d-flex justify-content-start">
-            <p class="m-0">{{comentario.texto}}</p>
+            <p class="m-0">{{comentarios[key].texto}}</p>
           </div>
           <div class="card-footer w-100 d-flex align-items-center justify-content-center">
-            <p class="m-0 d-flex opacity-50 justify-content-end">{{comentario.fecha}}</p>
+            <p class="m-0 d-flex opacity-50 justify-content-end">{{comentarios[key].fecha}}</p>
           </div>
-          <button class="btn text-white ml-2 trashButton" (click)="borrarComentario(this.comentario.id)">
+          <button class="btn text-white ml-2 trashButton" (click)="borrarComentario(this.comentarios[key])">
             <i class="fa-solid fa-trash"></i>
           </button>
         </div>

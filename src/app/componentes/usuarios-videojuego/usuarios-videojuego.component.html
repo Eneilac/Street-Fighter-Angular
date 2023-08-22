@@ -51,16 +51,16 @@
 
       <div class="col-5 contenedor-comentarios">
         <img class="titulos" src="../../../assets/usuarios/USUARIOS.png">
-        <ng-container *ngFor="let usuario of listaUsuarios">
-        <div class="card mb-2 comentaryBox"  *ngIf="usuario.role != 'ROLE_ADMIN'">
+        <ng-container *ngFor="let key of getKeys()">
+        <div class="card mb-2 comentaryBox"  *ngIf="listaUsuarios[key].role != 'ROLE_ADMIN'">
           <div class="card-body d-flex justify-content-start">
-            <p class="m-0">Nombre de usuario: {{usuario.usuario}}</p>
+            <p class="m-0">Nombre de usuario: {{listaUsuarios[key].usuario}}</p>
           </div>
           <div class="card-footer w-100 d-flex align-items-center justify-content-center">
-            <p class="m-0 d-flex opacity-50 justify-content-end">Registrado el: {{usuario.fecha}}</p>
+            <p class="m-0 d-flex opacity-50 justify-content-end">Registrado el: {{listaUsuarios[key].fecha}}</p>
           </div>
           <button class="btn text-white ml-2 trashButton">
-            <i class="fa-solid fa-trash" (click)="borrarUsuario(usuario.id)"></i>
+            <i class="fa-solid fa-trash" (click)="borrarUsuario(listaUsuarios[key])"></i>
           </button>
         </div>
         </ng-container>

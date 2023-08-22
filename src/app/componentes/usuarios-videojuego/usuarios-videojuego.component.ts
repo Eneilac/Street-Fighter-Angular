@@ -100,4 +100,7 @@ export class UsuariosVideojuegoComponent {
       this.aplicado = false;
     }
   }
+  getKeys() {
+    return Object.keys(this.listaUsuarios)
+  }
 }

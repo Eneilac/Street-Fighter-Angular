@@ -21,14 +21,14 @@ export class ComentariosVideojuegoComponent {
   aplicado: boolean | any;
 
 
-
   /**
    * Constructor
    * @param formBuilder
    * @param route
    * @param cargaComentarios
    */
-  constructor(private route: ActivatedRoute, private cargaComentarios: CargarComentariosService, private formBuilder: FormBuilder) {}
+  constructor(private route: ActivatedRoute, private cargaComentarios: CargarComentariosService, private formBuilder: FormBuilder) {
+  }
 
   ngOnInit() {
     this.aplicado = false;
@@ -38,6 +38,9 @@ export class ComentariosVideojuegoComponent {
       texto: ['', [Validators.required]],
     });
     this.comentarios = this.route.snapshot.data['comentarios'];
+
+
+    console.log(this.comentarios);
   }
 
   /**
@@ -49,7 +52,7 @@ export class ComentariosVideojuegoComponent {
   }
 
   comprobarVacio() {
-    var expresion= new RegExp( /[A-Za-z0-9]+/g) //Expresion regular para evitar que me meta comentarios en blanco,
+    var expresion = new RegExp(/[A-Za-z0-9]+/g) //Expresion regular para evitar que me meta comentarios en blanco,
     if (expresion.test(this.formComentarios.value.texto)) {
       return false;
     } else {
@@ -103,5 +106,9 @@ export class ComentariosVideojuegoComponent {
 
   resetForm() {
     this.formComentarios.reset();
+  }
+
+  getKeys() {
+    return Object.keys(this.comentarios)
   }
 }
